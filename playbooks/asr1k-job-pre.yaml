@@ -1,0 +1,10 @@
+---
+- hosts: primary
+  vars:
+    nexus_interfaces: >
+      {{ ci_node_interfaces }} +
+      {{ routers|map('extract', connections, ['data', 'port'])|list }}
+    nexus_config_op: "add"
+  roles:
+    - claim-some-vlans
+    - config-nexus-vlans

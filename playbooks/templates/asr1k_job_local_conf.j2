@@ -1,0 +1,9 @@
+{% include "lconf_netcisco_common.j2" %}
+
+{% include "lconf_common_vlan.j2" %}
+
+{% include "lconf_asr_glbl.j2" %}
+
+
+[[post-config|/etc/neutron/neutron.conf]]
+{% include "lconf_asr_postcfg_neutron_conf.j2" %}
