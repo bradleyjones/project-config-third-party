@@ -9,3 +9,7 @@
     - load-claimed-vlans
     - config-nexus-vlans
     - release-some-vlans
+
+- hosts: all
+  roles:
+    - tear-l2-tunnels

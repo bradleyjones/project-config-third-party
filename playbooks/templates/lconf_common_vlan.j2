@@ -8,4 +8,4 @@ OVS_VLAN_RANGES={{ vlan_physnet }}:{{claimed_vlan_range}}
 ENABLE_TENANT_VLANS=True
 Q_ML2_TENANT_NETWORK_TYPE=vlan
 
-OVS_BRIDGE_MAPPINGS={{ vlan_physnet }}:br-nexusnet
+OVS_BRIDGE_MAPPINGS=public:br-ex,{{ vlan_physnet }}:br-nexusnet

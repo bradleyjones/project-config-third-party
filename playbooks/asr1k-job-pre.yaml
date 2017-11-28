@@ -1,4 +1,9 @@
 ---
+- hosts: all
+  roles:
+    - install-openvswitch
+    - setup-l2-tunnels
+
 - hosts: primary
   vars:
     nexus_interfaces: >
