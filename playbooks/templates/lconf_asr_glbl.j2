@@ -1,5 +1,7 @@
 disable_service q-l3
+{% if 'ocata' in override_zuul_branch or 'pike' in override_zuul_branch %}
 NEUTRON_CREATE_INITIAL_NETWORKS=False
+{% endif %}
 
 # Default routertype for Neutron routers
 Q_CISCO_DEFAULT_ROUTER_TYPE=ASR1k_router
