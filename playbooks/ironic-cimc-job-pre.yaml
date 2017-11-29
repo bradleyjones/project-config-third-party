@@ -1,8 +1,12 @@
 ---
 - hosts: all
+  vars:
+    additional_pip_libraries:
+      - ImcSdk
   roles:
     - install-openvswitch
     - setup-l2-tunnels
+    - install-additional-pip-libraries
 
 - hosts: primary
   roles:

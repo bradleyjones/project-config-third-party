@@ -1,0 +1,5 @@
+---
+- name: pip install library
+  command: "pip install {{ item }}"
+  with_items: "{{ additional_pip_libraries }}"
+  become: true
