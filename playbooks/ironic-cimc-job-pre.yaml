@@ -2,7 +2,7 @@
 - hosts: all
   vars:
     additional_pip_libraries:
-      - ImcSdk
+      - "ImcSdk==0.7.2"
   roles:
     - install-openvswitch
     - setup-l2-tunnels
