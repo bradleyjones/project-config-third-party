@@ -3,7 +3,7 @@
   vars:
     additional_pip_libraries:
       - "ImcSdk==0.7.2"
-      - "cryptography===2.1.3"
+      - "cryptography===2.1.4"
   roles:
     - install-openvswitch
     - setup-l2-tunnels
