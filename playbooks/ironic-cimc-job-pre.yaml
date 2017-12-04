@@ -1,29 +1,25 @@
 ---
+# FIXME(sambetts) this should become part of the image build process
 - hosts: all
   tasks:
-    - stat:
+    - file: 
         path: /home/jenkins
-      register: st
-    - stat:
-        path: /home/jenkins/workspace
-      register: st2
-    - debug: msg="{{ st2 }}"
-    - debug: msg="{{ st }}"
+        mode: 0755
 
-#- hosts: all
-#  vars:
-#    additional_pip_libraries:
-#      - "ImcSdk==0.7.2"
-#      - "cryptography===2.1.4"
-#  roles:
-#    - install-openvswitch
-#    - setup-l2-tunnels
-#    - install-additional-pip-libraries
-#
-#- hosts: primary
-#  roles:
-#    - claim-some-vlans
-#    - clear-nexus-vlans
-#    - requires-a-cimc-baremetal
-#    - configure-vlan-for-baremetal
-#    - configure-vlan-for-hosts
+- hosts: all
+  vars:
+    additional_pip_libraries:
+      - "ImcSdk==0.7.2"
+      - "cryptography===2.1.4"
+  roles:
+    - install-openvswitch
+    - setup-l2-tunnels
+    - install-additional-pip-libraries
+
+- hosts: primary
+  roles:
+    - claim-some-vlans
+    - clear-nexus-vlans
+    - requires-a-cimc-baremetal
+    - configure-vlan-for-baremetal
+    - configure-vlan-for-hosts
