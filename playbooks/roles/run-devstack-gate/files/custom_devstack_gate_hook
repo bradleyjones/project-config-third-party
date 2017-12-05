@@ -6,5 +6,9 @@ function pre_test_hook {
   #(cd /opt/stack/new/devstack-gate && \
   # git fetch https://git.openstack.org/openstack-infra/devstack-gate refs/changes/46/510946/1 && git cherry-pick FETCH_HEAD && \
   # git fetch https://git.openstack.org/openstack-infra/devstack-gate refs/changes/45/512245/2 && git cherry-pick FETCH_HEAD)
+
+  # Cherry-pick fix into devstack to prevent it trying to setup the bridges for us
+  (cd /opt/stack/new/devstack && \
+   git fetch https://git.openstack.org/openstack-dev/devstack refs/changes/91/525691/1 && git cherry-pick FETCH_HEAD)
 }
 export -f pre_test_hook
