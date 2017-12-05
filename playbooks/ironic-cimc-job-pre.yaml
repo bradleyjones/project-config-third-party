@@ -2,7 +2,7 @@
 # FIXME(sambetts) this should become part of the image build process
 - hosts: all
   tasks:
-    - file: 
+    - file:
         path: /home/jenkins
         mode: 0755
 

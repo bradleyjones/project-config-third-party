@@ -1,5 +1,5 @@
 ---
-- name: Set the claimed VLANs on the Nexus interfaces for baremetal
+- name: Set the claimed VLANs on the Nexus interfaces for host
   command: >
     python {{ workspace }}/set_nexus_vlans.py {{ nexus_ip }}
     {{ nexus_user }} {{ nexus_password }} {{ item }}
