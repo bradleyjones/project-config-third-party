@@ -1,0 +1,17 @@
+---
+# yamllint disable rule:line-length
+- name: Create sub-interface on second nexus tap for conductor
+  shell: |
+    ip link add link nexustap2 name nexustap2.{{minvlan}} type vlan id {{minvlan}}
+  become: true
+# yamllint enable
+
+- name: Assign IP address for conductor to sub-interface
+  shell: |
+    ip addr add 10.1.0.2/26 dev nexustap2.{{minvlan}}
+  become: true
+
+- name: Bring up sub-interface for conductor
+  shell: |
+    ip link set dev nexustap2.{{minvlan}} up
+  become: true
